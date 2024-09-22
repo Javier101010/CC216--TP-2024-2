@@ -8,67 +8,62 @@
 - Renee Enriquez Montalvan           (U202221447)                                                 
 - Wendy Carol Hernández Pérez        (U202422529)
 
+
+### Objetivo
+
+El objetivo del presente informe es proporcionar información veraz y confiable, reduciendo la cantidad de datos atípicos presentes 
+en el dataset. Esto permitirá su uso adecuado para realizar análisis y estudios analíticos, facilitando la identificación 
+de patrones en el perfil de los huéspedes, los servicios más utilizados, entre otros aspectos clave. De esta manera, se podrá tomar 
+decisiones estratégicas para mejorar el servicio del hotel o anticiparse a futuros eventos, optimizando la experiencia del cliente 
+y la eficiencia operativa.
+
+### DataSet
+
+El conjunto de datos titulado "Hotel Booking Demand Datasets" fue publicado en 2019 por la revista International Journal of Hospitality 
+Management. Los autores del artículo, Nuno Antonio, Ana de Almeida y Luis Nunes, reconocidos expertos en el campo de la gestión hotelera,
+realizaron una investigación exhaustiva sobre la demanda de reservas en hoteles. La recopilación de los datos comenzó en octubre de 2018
+y su publicación tuvo lugar en diciembre del mismo año, abarcando hoteles ubicados en Lisboa, Portugal. Este dataset contiene información
+proveniente del Sistema de Gestión de Propiedades (PMS) de los hoteles, cada uno con su propia base de datos SQL, por esto es que podemos
+afirmar que la informacion es confiable y de calidad.
    
-### Índice
+### Variables que posee el dataset
 
-1. Introducción
-2. Casos de Análisis  
-   2.1. Origen de los datos  
-   2.2. Casos de Uso Aplicables  
-   2.3. Preguntas Clave para el Análisis Exploratorio
-3. Data Set  
-   3.1. Descripción del Data Set
-4. Análisis Exploratorio de Datos
+| **Columna**                      | **Tipo de dato** |
+|-----------------------------------|------------------|
+| hotel                             | Categórico       |
+| is_canceled                       | Lógico           |
+| lead_time                         | Numérico         |
+| arrival_date_year                 | Numérico         |
+| arrival_date_month                | Categórico       |
+| arrival_date_week_number          | Numérico         |
+| arrival_date_day_of_month         | Numérico         |
+| stays_in_weekend_nights           | Numérico         |
+| stays_in_week_nights              | Numérico         |
+| adults                            | Numérico         |
+| children                          | Numérico         |
+| babies                            | Numérico         |
+| meal                              | Categórico       |
+| country                           | Categórico       |
+| market_segment                    | Categórico       |
+| distribution_channel              | Categórico       |
+| is_repeated_guest                 | Lógico           |
+| previous_cancellations            | Numérico         |
+| previous_bookings_not_canceled    | Numérico         |
+| reserved_room_type                | Categórico       |
+| assigned_room_type                | Categórico       |
+| booking_changes                   | Numérico         |
+| deposit_type                      | Categórico       |
+| agent                             | Numérico         |
+| company                           | Numérico         |
+| days_in_waiting_list              | Numérico         |
+| customer_type                     | Categórico       |
+| adr                               | Numérico         |
+| required_car_parking_spaces       | Numérico         |
+| total_of_special_requests         | Numérico         |
+| reservation_status                | Categórico       |
+| reservation_status_date           | Fecha            |
 
+## Conclusiones
 
-## Variables
-
-| Variables | Columna 1 | Columna 2 |
-| --------- | --------- | --------- |
-| V1        | Dato 1    | Dato 2    |
-| V2        | Dato A    | Dato B    |
-
-
-## Codigo
-
-Script de R para la manipulacion y limpieza de datos.
-
-```
-rm(list=ls(all=TRUE))
-graphics.off()
-cat("\014")
-
-library(ggplot2)
-library(cowplot)
-library(patchwork)
-library(gridExtra)
-
-mtcars
-
-mtcars<-mtcars
-
-head(mtcars)
-
-summary(mtcars$hp)
-
-##Historigrama
-p1<-ggplot(data = mtcars,
-           mapping = aes(x = hp)) +
-  geom_histogram(aes(y=..density..),
-                 bins = 15,
-                 position = 'identity',
-                 alpha = 0.8,
-                 color="white",
-                 fill="lightskyblue3") +
-  stat_function(fun = dnorm,
-                args = list(mean = mean(mtcars$hp),
-                            sd = sd(mtcars$hp)))+
-  labs(title = 'Histograma',
-       x = 'Potencia (Caballos de fuerza - HP)',
-       y = 'conteos',
-       subtitle = 'Detectar valores atípicos',
-       caption = 'Fuente:MPG')
-p1
-```
 
 
