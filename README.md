@@ -17,9 +17,9 @@
 3. [Data Set](#data-set)  
    3.1. [Descripción del Data Set](#descripción-del-data-set)  
    3.2. [Variables](#variables)   
-5. [Conclusiones Preliminares](#conclusiones-preliminares)  
-6. [Conclusión](#conclusión)
-7. [Referencias](#referencias)
+4. [Visualización de Datos](#visualizacion-de-datos)
+5. [Conclusión](#conclusión)
+6. [Referencias](#referencias)
 
 
 ## 1. Objetivo
@@ -38,7 +38,7 @@ Management. Los autores del artículo, Nuno Antonio, Ana de Almeida y Luis Nunes
 realizaron una investigación exhaustiva sobre la demanda de reservas en hoteles. La recopilación de los datos comenzó en octubre de 2018
 y su publicación tuvo lugar en diciembre del mismo año, abarcando hoteles ubicados en Lisboa, Portugal. Este dataset contiene información
 proveniente del Sistema de Gestión de Propiedades (PMS) de los hoteles, cada uno con su propia base de datos SQL, por esto es que podemos
-afirmar que la informacion es confiable y de calidad.
+afirmar que la informacion es confiable y de calidad.  
 ![Hotel](URL_de_la_imagen)
    
 ### 3.2 Variables
@@ -80,8 +80,47 @@ afirmar que la informacion es confiable y de calidad.
 | ReservationStatus                 | Categórico     | Último estado de la reserva: Cancelada, Check-Out, No-Show                                                                                                                                                                     | BO                                                                               |
 | ReservationStatusDate             | Fecha          | Fecha en que se estableció el último estado de la reserva. Puede usarse junto con el estado de la reserva para entender cuándo se canceló la reserva o cuándo se realizó el check-out del cliente                                | BO                                                                               |
 
+## 4. Visualización de Datos
+
+### ¿Cuántas reservas se realizan por tipo de hotel? ¿Qué tipo de hotel prefiere la gente?
+Se hicieron 78672 reservas de hotel en la ciudad y 38504 reservas de hotel en el de tipo resort.  
+![Hotel](URL_de_la_imagen)
+
+### ¿Está aumentando la demanda con el tiempo?
+Se hicieron 21629 reservas en 2015, 55506 reservas en 2016 y 40041 reservas en 2017.  
+![Hotel](URL_de_la_imagen)
+
+### ¿Cuáles son las temporadas de reservas (alta, media, baja)?
+La cantidad de registros según el mes son:
+- Agosto: 13,733
+- Julio: 12,509
+- Mayo: 11,676
+- Octubre: 11,046
+- Abril: 10,864
+- Junio: 10,830
+- Septiembre: 10,460
+- Marzo: 9,526
+- Febrero: 7,748
+- Noviembre: 6,653
+- Diciembre: 6,400
+- Enero: 5,731  
+![Hotel](URL_de_la_imagen)
+
+### ¿Cuántas reservas incluyen niños y/o bebés?
+Como se puede observar, la mayoría de reservas no cuentan con niños y bebés. Siendo un total de 108163 reservas y a diferencia de los que sí cuentan con un total de 9013 reservas.  
+![Hotel](URL_de_la_imagen)
+
+### ¿Es importante contar con espacios de estacionamiento?
+Se obtuvieron un total de 109829 registros en los que los clientes no necesitan espacios de estacionamientos a diferencia de los 7347 registros que sí lo necesitaron.  
+![Hotel](URL_de_la_imagen)
+
+### ¿En qué meses del año se producen más cancelaciones de reservas?
+Según podemos observar un gran número de las cancelaciones son en el mes de agosto seguido de julio y mayo, probablemente debido al hecho de ser el verano o su proximidad a este.  
+![Hotel](URL_de_la_imagen)
+
 
 ## 5. Conclusiones
+De acuerdo con el análisis realizado en este informe, podemos concluir que la demanda de servicios hoteleros en la región de Lisboa, Portugal, experimentó un crecimiento superior al 100%, seguido de una disminución en 2017, lo que resultó en una caída en las ganancias y un bajo rendimiento de las inversiones en ese año. Aunque no es posible determinar con exactitud las causas de la baja demanda con los datos disponibles, se puede inferir que está relacionada con las tendencias y preferencias de las personas solteras, quienes constituyen el principal grupo de clientes en los resorts de la región. Además, algunos factores como la calidad del servicio también pueden estar influyendo en la demanda. Por tanto, se sugiere que los hoteles enfoquen sus servicios hacia este segmento de solteros, que representa el mayor porcentaje de clientes en la zona.
 
 
 ## 6. Referencias
