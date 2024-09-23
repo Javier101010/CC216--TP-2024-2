@@ -23,23 +23,68 @@
 
 
 ## 1. Objetivo
-
 El objetivo del presente informe es proporcionar información veraz y confiable, reduciendo la cantidad de datos atípicos presentes 
 en el dataset. Esto permitirá su uso adecuado para realizar análisis y estudios analíticos, facilitando la identificación 
 de patrones en el perfil de los huéspedes, los servicios más utilizados, entre otros aspectos clave. De esta manera, se podrá tomar 
 decisiones estratégicas para mejorar el servicio del hotel o anticiparse a futuros eventos, optimizando la experiencia del cliente 
 y la eficiencia operativa.
 
-## 3. DataSet
-
-### 3.1 Descripción del Data Set
+## 2. Casos de Análisis
+### 2.1. Origen de los datos
 El conjunto de datos titulado "Hotel Booking Demand Datasets" fue publicado en 2019 por la revista International Journal of Hospitality 
 Management. Los autores del artículo, Nuno Antonio, Ana de Almeida y Luis Nunes, reconocidos expertos en el campo de la gestión hotelera,
 realizaron una investigación exhaustiva sobre la demanda de reservas en hoteles. La recopilación de los datos comenzó en octubre de 2018
 y su publicación tuvo lugar en diciembre del mismo año, abarcando hoteles ubicados en Lisboa, Portugal. Este dataset contiene información
 proveniente del Sistema de Gestión de Propiedades (PMS) de los hoteles, cada uno con su propia base de datos SQL, por esto es que podemos
 afirmar que la informacion es confiable y de calidad.  
-![Hotel](URL_de_la_imagen)
+![Hotel](hotel_booking.jpg)  
+
+### 2.2 Casos de Uso Aplicables
+¿Quién podría estar interesado en este análisis?
+
+- Agencias de viajes: Este análisis les permite comprender mejor los comportamientos y preferencias de sus clientes. Con estos datos,
+pueden desarrollar estrategias personalizadas, mejorar la experiencia del cliente y aumentar la lealtad.
+
+- Propietarios de hoteles: Les ayuda a optimizar sus estrategias de reservas y ajustar los precios para maximizar ingresos. Además, pueden
+tomar decisiones informadas sobre la gestión de servicios.
+
+- Departamentos de marketing: Pueden utilizar los insights del análisis de reservas para segmentar mejor el mercado y crear estrategias de
+marketing personalizadas, atrayendo nuevos clientes y mejorando la participación del cliente.
+
+- Investigadores: Les permite desarrollar teorías y modelos sobre el comportamiento del cliente y la industria hotelera, además de crear 
+modelos predictivos que anticipen la demanda de habitaciones en diferentes momentos y lugares.
+
+¿Qué problemas o necesidades responde este análisis?
+
+- Mejorar la predicción de la demanda: El análisis permite anticipar la demanda futura, ayudando a los hoteles a planificar mejor sus recursos 
+y estrategias.
+
+- Aumentar la lealtad de clientes: Al analizar las preferencias de reserva, los hoteles pueden ofrecer servicios personalizados y desarrollar 
+programas de recompensas que aumenten la fidelidad del cliente.
+
+- Optimizar ingresos: El análisis de reservas y cancelaciones ayuda a los hoteles a ajustar sus precios y disponibilidad de habitaciones en
+función de la demanda, evitando sobreventas o subventas.
+
+- Identificar oportunidades de innovación: Los datos ofrecen valiosos insights para diferenciarse de la competencia, implementando tecnologías
+innovadoras que mejoren la experiencia del cliente.
+
+
+## 3. DataSet
+
+### 3.1 Descripción del Data Set
+El dataset contiene informacion de los registros de hoteles entre los años 2015 y 2017, informacion que puede visualizar descargando el dataset
+en la carpeta data. 
+Para ejecutar el script ubicado en la carpeta "code", debe seleccionar una carpeta donde ubicar el dataset y luego cargar usando 
+```
+setwd("ubicacion de la carpeta con el dataset")
+hotel_data <-read.csv('hotel_bookings.csv', header=TRUE, sep=',',dec='.',stringsAsFactors = FALSE,,na.strings="")
+
+View(hotel_data)
+names(hotel_data)
+str(hotel_data)
+summary(hotel_data)
+```
+Si no puede usar el comando ` View(hotel_data) ` y otros, entonces instale las librerias necesarias como ` tidyverse `, ` ggplot2 `
    
 ### 3.2 Variables
 - BO: Booking
@@ -84,11 +129,11 @@ afirmar que la informacion es confiable y de calidad.
 
 ### ¿Cuántas reservas se realizan por tipo de hotel? ¿Qué tipo de hotel prefiere la gente?
 Se hicieron 78672 reservas de hotel en la ciudad y 38504 reservas de hotel en el de tipo resort.  
-![Hotel](URL_de_la_imagen)
+![Hotel](Tipo_hotel.png)
 
 ### ¿Está aumentando la demanda con el tiempo?
 Se hicieron 21629 reservas en 2015, 55506 reservas en 2016 y 40041 reservas en 2017.  
-![Hotel](URL_de_la_imagen)
+![Hotel](Demanda_año.png)
 
 ### ¿Cuáles son las temporadas de reservas (alta, media, baja)?
 La cantidad de registros según el mes son:
@@ -104,19 +149,19 @@ La cantidad de registros según el mes son:
 - Noviembre: 6,653
 - Diciembre: 6,400
 - Enero: 5,731  
-![Hotel](URL_de_la_imagen)
+![Hotel](Reservas_mes.png)
 
 ### ¿Cuántas reservas incluyen niños y/o bebés?
 Como se puede observar, la mayoría de reservas no cuentan con niños y bebés. Siendo un total de 108163 reservas y a diferencia de los que sí cuentan con un total de 9013 reservas.  
-![Hotel](URL_de_la_imagen)
+![Hotel](Reserva_bebes.png)
 
 ### ¿Es importante contar con espacios de estacionamiento?
 Se obtuvieron un total de 109829 registros en los que los clientes no necesitan espacios de estacionamientos a diferencia de los 7347 registros que sí lo necesitaron.  
-![Hotel](URL_de_la_imagen)
+![Hotel](Estacionamiento.png)
 
 ### ¿En qué meses del año se producen más cancelaciones de reservas?
 Según podemos observar un gran número de las cancelaciones son en el mes de agosto seguido de julio y mayo, probablemente debido al hecho de ser el verano o su proximidad a este.  
-![Hotel](URL_de_la_imagen)
+![Hotel](Cancelaciones.png)
 
 
 ## 5. Conclusiones
